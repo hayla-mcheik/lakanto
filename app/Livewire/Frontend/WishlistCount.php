@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Frontend;
+namespace App\Livewire\Frontend;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use App\Models\Wishlist;

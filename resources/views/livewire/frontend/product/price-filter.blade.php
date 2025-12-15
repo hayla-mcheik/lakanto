@@ -18,7 +18,7 @@
 
 @push('scripts')
 <script>
-    document.addEventListener('livewire:load', function () {
+    document.addEventListener('livewire:init', function () {
         var minPrice = @json($minPrice);
         var maxPrice = @json($maxPrice);
 

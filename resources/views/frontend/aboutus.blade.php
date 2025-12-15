@@ -22,7 +22,24 @@
         </div>
       </div>
       <!--== End Page Header Area Wrapper ==-->
-  
+ 
+      <!--== Start Title & Description Area Wrapper (New Section) ==-->
+      <div class="container pt-100 pb-100">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <h2 class="h1 mb-4">Dedicated to Quality and Customer Success</h2>
+            <p class="lead">We believe in delivering exceptional value through innovative solutions and unwavering commitment to our clients. Our journey is built on trust, transparency, and a relentless pursuit of excellence in everything we do.</p>
+          </div>
+        </div>
+
+                <div class="row justify-content-center">
+          <div class="col-lg-12 text-center">
+<img src="/assets/img/compressed/img-first.jpg" class="img-fluid" />
+          </div>
+        </div>
+      </div>
+      <!--== End Title & Description Area Wrapper ==-->
+ 
       <!--== Start About Area Wrapper ==-->
       <section class="about-area about-page-area">
         <div class="container">
@@ -43,7 +60,7 @@
         </div>
       </section>
       <!--== End About Area Wrapper ==-->
-  
+ 
       <!--== Start Feature Area Wrapper ==-->
       <div class="feature-area feature-about-area position-relative z-index-1">
         <div class="container">

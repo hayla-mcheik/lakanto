@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Frontend\Product;
+namespace App\Livewire\Frontend\Product;
 
 use Livewire\Component;
 use App\Models\Product;
@@ -32,7 +32,7 @@ class PriceFilter extends Component
 
     public function filterProducts()
     {
-        $this->emit('priceRangeUpdated', $this->selectedMinPrice, $this->selectedMaxPrice);
+        $this->dispatch('priceRangeUpdated', $this->selectedMinPrice, $this->selectedMaxPrice);
     }
 
     public function render()

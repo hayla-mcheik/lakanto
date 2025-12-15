@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Admin\Category;
+namespace App\Livewire\Admin\Category;
 use App\Models\Category;
 use Livewire\WithPagination;
 use Livewire\Component;
@@ -29,7 +29,7 @@ public function destroyCategory()
 
     $category->delete();
     session()->flash('message','Category Deleted');
-    $this->dispatchBrowserEvent('close-modal');
+    $this->dispatch('close-modal');
 }
     public function render()
     {

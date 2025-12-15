@@ -6,7 +6,7 @@
         <h1 class="modal-title fs-5" id="exampleModalLabel">Category Delete</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <form wire:submit.prevent="destroyCategory">
+      <form wire:submit="destroyCategory">
       <div class="modal-body">
         <h6>Are you sure you want to delete this data?</h6>
       </div>

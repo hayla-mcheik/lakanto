@@ -147,6 +147,6 @@ Route::get('sliders/{slider}/delete','destroy');
         Route::put('/users/{user_id}', 'update'); 
         Route::get('/users/{user_id}/delete', 'destroy'); 
     });
-Route::get('/brands',App\Http\Livewire\Admin\Brand\Index::class);
+Route::get('/brands',App\Livewire\Admin\Brand\Index::class);
 
 });

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Frontend\Cart;
+namespace App\Livewire\Frontend\Cart;
 
 use App\Models\Cart;
 use Livewire\Component;
@@ -38,7 +38,7 @@ class CartItems extends Component
         // Check if the user is authenticated
         if (auth()->check()) {
             Cart::where('id', $cartId)->where('user_id', auth()->user()->id)->delete();
-            $this->emit('CartAddedUpdated');
+            $this->dispatch('CartAddedUpdated');
             $this->updateCart();
         }
     }

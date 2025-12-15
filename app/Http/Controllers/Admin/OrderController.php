@@ -25,9 +25,7 @@ class OrderController extends Controller
 
     public function show(int $orderId)
     {
- 
         $order = Order::where('id',$orderId)->first();
-         
         if($order)
         {
             return view('admin.orders.view',compact('order'));

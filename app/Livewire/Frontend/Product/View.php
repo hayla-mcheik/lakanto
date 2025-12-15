@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Frontend\Product;
+namespace App\Livewire\Frontend\Product;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use App\Models\Wishlist;
@@ -24,11 +24,11 @@ if(Wishlist::where('user_id',auth()->user()->id)->where('product_id',$productId)
 {
 session()->flash('message','Already added to wishlist');
 
-$this->dispatchBrowserEvent('message' , [
-    'text' => 'Already added to wishlist',
-    'type' => 'warning',
-    'status' => 409
-]);
+$this->dispatch('message' , 
+    text : 'Already added to wishlist',
+    type : 'warning',
+    status : 409
+);
 return false;
 }
 else 
@@ -37,25 +37,25 @@ Wishlist::create([
     'user_id' => auth()->user()->id,
     'product_id' => $productId,
 ]);
-$this->emit('wishlistAddedUpdated');
+$this->dispatch('wishlistAddedUpdated');
 session()->flash('message','Wishlist Added successfully');
 
-$this->dispatchBrowserEvent('message' , [
-    'text' => 'Wishlist Added successfully',
-    'type' => 'success',
-    'status' => 200
-]);
+$this->dispatch('message' , 
+    text : 'Wishlist Added successfully',
+    type :'success',
+    status : 200
+);
 }
 }
 else 
 {
     session()->flash('message','Please Login to Continue');
 
-    $this->dispatchBrowserEvent('message' , [
-        'text' => 'Please Login to Continue',
-        'type' => 'info',
-        'status' => 401
-    ]);
+    $this->dispatch('message' , 
+        text : 'Please Login to Continue',
+        type : 'info',
+        status : 401
+    );
     return false;
 }
 }
@@ -93,11 +93,11 @@ public function addToCart(int $productId)
     {
         if(Auth::user()->role_as == '1')
         {
-            $this->dispatchBrowserEvent('message', [
-                'text' => 'Only User can add to cart',
-                'type' => 'warning',
-                'status' => 200
-            ]);  
+            $this->dispatch('message', 
+                text : 'Only User can add to cart',
+                type : 'warning',
+                status : 200
+            );  
             return;
         }
 // dd($productId);
@@ -106,11 +106,11 @@ if($this->product->where('id',$productId)->where('status','0')->exists())
 
     if(Cart::where('user_id',auth()->user()->id)->where('product_id',$productId)->exists())
     {
-        $this->dispatchBrowserEvent('message' , [
-            'text' => 'Product Already Added',
-            'type' => 'warning',
-            'status' => 200
-        ]);
+        $this->dispatch('message' , 
+            text : 'Product Already Added',
+            type : 'warning',
+            status : 200
+        );
     }
     else
     {
@@ -125,49 +125,49 @@ if($this->product->where('id',$productId)->where('status','0')->exists())
                     'product_id' => $productId,
                     'quantity' => 1,
                 ]);
-                $this->emit('CartAddedUpdated');
-                $this->dispatchBrowserEvent('message' , [
-                    'text' => 'Product Added to Cart',
-                    'type' => 'success',
-                    'status' => 200
-                ]);
+                $this->dispatch('CartAddedUpdated');
+                $this->dispatch('message' , 
+                    text : 'Product Added to Cart',
+                    type : 'success',
+                    status : 200
+                );
         }
         else
         {
-            $this->dispatchBrowserEvent('message' , [
-                'text' => 'Only' .$this->product->quantity. 'Quantity Available',
-                'type' => 'warning',
-                'status' => 404
-            ]);
+            $this->dispatch('message' , 
+                text : 'Only' .$this->product->quantity. 'Quantity Available',
+                type : 'warning',
+                status : 404
+            );
         }
     }
     else
     {
-        $this->dispatchBrowserEvent('message' , [
-            'text' => 'Out of Stock',
-            'type' => 'warning',
-            'status' => 404
-        ]);
+        $this->dispatch('message' , 
+            text : 'Out of Stock',
+            type : 'warning',
+            status : 404
+        );
     }
 }
 
 }
 else
 {
-    $this->dispatchBrowserEvent('message' , [
-        'text' => 'Product Doest not exists',
-        'type' => 'warning',
-        'status' => 404
-    ]);
+    $this->dispatch('message' , 
+        text : 'Product Doest not exists',
+        type : 'warning',
+        status : 404
+    );
 }
     }
     else 
     {
-        $this->dispatchBrowserEvent('message' , [
-            'text' => 'Please Login to add to cart',
-            'type' => 'info',
-            'status' => 401
-        ]);
+        $this->dispatch('message' , 
+            text : 'Please Login to add to cart',
+            type : 'info',
+            status : 401
+        );
     }
 }
 

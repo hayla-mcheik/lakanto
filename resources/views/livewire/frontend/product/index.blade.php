@@ -43,12 +43,12 @@
                     <div class="sidebar-menu-list">
                       <div class="list-item">
                         <label class="d-block">
-                           <input type="radio" name="priceSort" wire:model="priceInput" value="high-to-low" /> High to Low
+                           <input type="radio" name="priceSort" wire:model.live="priceInput" value="high-to-low" /> High to Low
                         </label>
                      </div>
                      <div class="list-item">
                         <label class="d-block">
-                           <input type="radio" name="priceSort" wire:model="priceInput" value="low-to-high" /> Low to High
+                           <input type="radio" name="priceSort" wire:model.live="priceInput" value="low-to-high" /> Low to High
                         </label>
                      </div>
                      

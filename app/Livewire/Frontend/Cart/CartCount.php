@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Frontend\Cart;
+namespace App\Livewire\Frontend\Cart;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Cart;
 use Livewire\Component;

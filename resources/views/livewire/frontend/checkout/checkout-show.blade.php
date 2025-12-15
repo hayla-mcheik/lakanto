@@ -26,32 +26,32 @@
                                                     </ul>
                                                 </div>
                                                 <div class="delivery-address-form">
-                                                    <form wire:submit.prevent="validatePersonalInformation">
+                                                    <form wire:submit="validatePersonalInformation">
                                                         <div class="form-group row">
                                                             <label class="col-md-3" for="f_name">First name</label>
                                                             <div class="col-md-6">
-                                                                <input id="f_name" wire:model.defer="fullname" class="form-control" type="text">
+                                                                <input id="f_name" wire:model="fullname" class="form-control" type="text">
                                                                 @error('fullname') <span class="text-danger">{{ $message }}</span> @enderror
                                                             </div>
                                                         </div>
                                                         <div class="form-group row">
                                                             <label class="col-md-3" for="frm_address">Address</label>
                                                             <div class="col-md-6">
-                                                                <input id="frm_address" wire:model.defer="address" class="form-control" type="text">
+                                                                <input id="frm_address" wire:model="address" class="form-control" type="text">
                                                                 @error('address') <span class="text-danger">{{ $message }}</span> @enderror
                                                             </div>
                                                         </div>
                                                         <div class="form-group row">
                                                             <label class="col-md-3" for="frm-phone">Phone</label>
                                                             <div class="col-md-6">
-                                                                <input id="frm-phone" wire:model.defer="phone" class="form-control" type="tel">
+                                                                <input id="frm-phone" wire:model="phone" class="form-control" type="tel">
                                                                 @error('phone') <span class="text-danger">{{ $message }}</span> @enderror
                                                             </div>
                                                         </div>
                                                         <div class="form-group row">
                                                             <label class="col-md-3" for="frm-email">Email</label>
                                                             <div class="col-md-6">
-                                                                <input id="frm-email" wire:model.defer="email" class="form-control" type="email">
+                                                                <input id="frm-email" wire:model="email" class="form-control" type="email">
                                                                 @error('email') <span class="text-danger">{{ $message }}</span> @enderror
                                                             </div>
                                                         </div>
@@ -102,7 +102,7 @@
                             <p>If you have a promo code, please enter the code to get a discount.</p>
                             <div class="promocode d-flex justify-content-between">
                                 <div class="form-group">
-                                    <input class="form-control promocode" wire:model="promoCode" type="text" name="promocode" placeholder="Discount Code" />
+                                    <input class="form-control promocode" wire:model.live="promoCode" type="text" name="promocode" placeholder="Discount Code" />
                                 </div>
                                 <div class="btn btn-promocode-apply" wire:click="applyPromoCode" type="button">Apply</div>
                             </div>

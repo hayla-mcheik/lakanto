@@ -18,7 +18,6 @@
         <h5>Order Details</h5>
         <hr>
 
-                <h5>Order Details</h5>
                 <hr>
                 <h6>Order Id: {{ $order->id }}</h6>
                 <h6>Tracking Id/No: {{ $order->tracking_no }}</h6>
