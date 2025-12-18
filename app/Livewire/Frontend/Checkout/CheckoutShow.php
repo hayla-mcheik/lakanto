@@ -37,6 +37,9 @@ class CheckoutShow extends Component
     {
         $this->validate();
         $this->isPersonalInfoValid = true;
+        
+        // Dispatch event to trigger JavaScript
+        $this->dispatch('personalInfoValidated');
     }
 
     /* ---------------- Promo Code ---------------- */

@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-12">
         <!--== Start Footer Widget Area ==-->
-        <div class="footer-widget-area pb-30">
+        {{-- <div class="footer-widget-area pb-30">
           <div class="row">
             <div class="col-lg-6">
               <div class="widget-item">
@@ -37,7 +37,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> --}}
         <!--== End Footer Widget Area ==-->
       </div>
     </div>

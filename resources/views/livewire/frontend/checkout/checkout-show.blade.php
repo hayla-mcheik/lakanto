@@ -9,13 +9,13 @@
                             <div class="checkout-accordion" id="accordionExample">
                                 <div class="checkout-accordion-item">
                                     <h2 class="heading" id="headingTwo">
-                                        <button class="heading-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        <button class="heading-button @if(!$isPersonalInfoValid) collapsed @endif" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="@if($isPersonalInfoValid) true @else false @endif" aria-controls="collapseTwo">
                                             <span class="step-number">1</span>
                                             Personal Information
                                             <span class="step-edit"><i class="fa fa-pencil"></i> edit</span>
                                         </button>
                                     </h2>
-                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                    <div id="collapseTwo" class="accordion-collapse collapse @if($isPersonalInfoValid) show @endif" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                         <div class="checkout-accordion-body" data-margin-top="14">
                                             <div class="personal-addresses">
                                                 <p class="p-text">The selected address will be used both as your personal address (for invoice) and as your delivery address.</p>
@@ -26,7 +26,7 @@
                                                     </ul>
                                                 </div>
                                                 <div class="delivery-address-form">
-                                                    <form wire:submit="validatePersonalInformation">
+                                                    <form wire:submit.prevent="validatePersonalInformation">
                                                         <div class="form-group row">
                                                             <label class="col-md-3" for="f_name">First name</label>
                                                             <div class="col-md-6">
@@ -69,13 +69,13 @@
 
                                 <div class="checkout-accordion-item">
                                     <h2 class="heading" id="headingThree">
-                                        <button class="heading-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" @if(!$isPersonalInfoValid) disabled @endif>
+                                        <button class="heading-button @if($isPersonalInfoValid) collapsed @endif" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="@if($isPersonalInfoValid) true @else false @endif" aria-controls="collapseThree" @if(!$isPersonalInfoValid) disabled @endif>
                                             <span class="step-number">3</span>
                                             Payment
                                             <span class="step-edit"><i class="fa fa-pencil"></i> edit</span>
                                         </button>
                                     </h2>
-                                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div id="collapseThree" class="accordion-collapse collapse @if($isPersonalInfoValid) show @endif" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                         <div class="checkout-accordion-body" data-margin-top="14">
                                             <div class="personal-addresses">
                                                 <h6>Cash on Delivery Mode</h6>
@@ -155,4 +155,30 @@
         </div>
     </section>
     <!--== End Product Area Wrapper ==-->
+    
+    @script
+    <script>
+        document.addEventListener('livewire:init', () => {
+            Livewire.on('personalInfoValidated', () => {
+                // Close the personal info section
+                const collapseTwo = document.getElementById('collapseTwo');
+                if (collapseTwo) {
+                    const bsCollapseTwo = new bootstrap.Collapse(collapseTwo, {
+                        toggle: false
+                    });
+                    bsCollapseTwo.hide();
+                }
+                
+                // Open the payment section
+                const collapseThree = document.getElementById('collapseThree');
+                if (collapseThree) {
+                    const bsCollapseThree = new bootstrap.Collapse(collapseThree, {
+                        toggle: false
+                    });
+                    bsCollapseThree.show();
+                }
+            });
+        });
+    </script>
+    @endscript
 </div>

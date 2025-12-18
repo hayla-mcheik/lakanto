@@ -234,8 +234,8 @@ table p {
 /*-------- Spacing Style Css --------*/
 section .container,
 section .container-fluid {
-  padding-bottom: 82px;
-  padding-top: 82px;
+  padding-bottom: 42px;
+  padding-top: 42px;
 }
 @media only screen and (max-width: 1199px) {
   section .container,
@@ -6476,8 +6476,8 @@ section .container-fluid {
 */
 .blog-area.blog-single-area .container {
   max-width: 1200px;
-  padding-top: 82px;
-  padding-bottom: 82px;
+  padding-top: 42px;
+  padding-bottom: 42px;
 }
 @media only screen and (max-width: 991px) {
   .blog-area.blog-single-area .container {
@@ -7460,12 +7460,15 @@ section .container-fluid {
 */
 .footer-area {
   background: #0f0f0f;
-  padding: 60px 0 0;
+  padding: 0px 0 0;
 }
 @media only screen and (max-width: 991px) {
   .footer-area {
-    padding: 45px 0 0;
+    padding: 20px 0 0;
   }
+}
+.footer-connect-section .container{
+  padding: 20px !important;
 }
 .footer-area p {
   color: rgba(255, 255, 255, 0.5019607843);
