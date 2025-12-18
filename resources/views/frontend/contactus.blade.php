@@ -55,53 +55,76 @@
                 <div class="contact-form">
                   <form id="contact-form" action="{{ url('contact/submit') }}" method="POST">
                     @csrf
-                    <div class="row row-gutter-20">
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <input class="form-control @error('name') is-invalid @enderror" type="text" name="name" placeholder="Name" value="{{ old('name') }}">
-                          @error('name')
-                            <div class="invalid-feedback">{{ $message }}</div>
-                          @enderror
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <input class="form-control @error('email') is-invalid @enderror" type="email" name="email" placeholder="Email" value="{{ old('email') }}">
-                          @error('email')
-                            <div class="invalid-feedback">{{ $message }}</div>
-                          @enderror
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <input class="form-control @error('phone') is-invalid @enderror" type="tel" name="phone" placeholder="Phone (8-15 digits)" value="{{ old('phone') }}">
-                          @error('phone')
-                            <div class="invalid-feedback">{{ $message }}</div>
-                          @enderror
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <input class="form-control @error('subject') is-invalid @enderror" type="text" name="subject" placeholder="Subject" value="{{ old('subject') }}">
-                          @error('subject')
-                            <div class="invalid-feedback">{{ $message }}</div>
-                          @enderror
-                        </div>
-                      </div>
-                      <div class="col-12">
-                        <div class="form-group">
-                          <textarea class="form-control @error('message') is-invalid @enderror" name="message" placeholder="Message">{{ old('message') }}</textarea>
-                          @error('message')
-                            <div class="invalid-feedback">{{ $message }}</div>
-                          @enderror
-                        </div>
-                      </div>
-                      <div class="col-12">
-                        <div class="form-group mb--0">
-                          <button class="btn-theme" type="submit">Submit Now</button>
-                        </div>
-                      </div>
-                    </div>
+                  <!-- In your contact.blade.php file -->
+<div class="row row-gutter-20">
+    <div class="col-md-6">
+        <div class="form-group">
+            <input class="form-control @error('name') is-invalid @enderror" 
+                   type="text" 
+                   name="name" 
+                   placeholder="Name" 
+                   value="{{ old('name') }}"
+                   required>
+            @error('name')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <input class="form-control @error('email') is-invalid @enderror" 
+                   type="email" 
+                   name="email" 
+                   placeholder="Email" 
+                   value="{{ old('email') }}">
+            @error('email')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <input class="form-control @error('phone') is-invalid @enderror" 
+                   type="tel" 
+                   name="phone" 
+                   placeholder="Phone (8-15 digits)" 
+                   value="{{ old('phone') }}"
+                   required>
+            @error('phone')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <input class="form-control @error('subject') is-invalid @enderror" 
+                   type="text" 
+                   name="subject" 
+                   placeholder="Subject" 
+                   value="{{ old('subject') }}"
+                   required>
+            @error('subject')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="form-group">
+            <textarea class="form-control @error('message') is-invalid @enderror" 
+                      name="message" 
+                      placeholder="Message"
+                      required>{{ old('message') }}</textarea>
+            @error('message')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="form-group mb--0">
+            <button class="btn-theme" type="submit">Submit Now</button>
+        </div>
+    </div>
+</div>
                   </form>
                 </div>
                 <!--== End Contact Form ==-->

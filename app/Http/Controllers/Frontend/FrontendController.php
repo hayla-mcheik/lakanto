@@ -122,14 +122,13 @@ public function thankyou()
 
 public function contactsubmit(Request $request)
 {
-    $request->validate([
+    $validator = $request->validate([
         'name' => 'required|string|max:255',
         'email' => 'nullable|email|max:255',
         'phone' => [
             'required',
             'string',
             function ($attribute, $value, $fail) {
-                // Remove all non-digit characters to check actual digit count
                 $digitsOnly = preg_replace('/\D/', '', $value);
                 if (strlen($digitsOnly) < 8 || strlen($digitsOnly) > 15) {
                     $fail('The phone number must be between 8 and 15 digits.');
@@ -138,6 +137,17 @@ public function contactsubmit(Request $request)
         ],
         'subject' => 'required|string|max:255',
         'message' => 'required|string|max:1000'
+    ], [
+        'name.required' => 'Please enter your name',
+        'name.string' => 'Name must be valid text',
+        'name.max' => 'Name cannot exceed 255 characters',
+        'email.email' => 'Please enter a valid email address',
+        'email.max' => 'Email cannot exceed 255 characters',
+        'phone.required' => 'Phone number is required',
+        'subject.required' => 'Please enter a subject',
+        'subject.max' => 'Subject cannot exceed 255 characters',
+        'message.required' => 'Please enter your message',
+        'message.max' => 'Message cannot exceed 1000 characters',
     ]);
 
     // Clean phone number - keep only digits
@@ -152,9 +162,9 @@ public function contactsubmit(Request $request)
     ];
 
     Mail::to('mcheikhayla26@gmail.com')->send(new ContactFormMail($emailData));
+    
     return back()->with('success', 'Your message has been submitted successfully.');
 }
-
 
 public function subscribe(Request $request)
 {
