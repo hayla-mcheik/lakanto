@@ -1,4 +1,3 @@
-
 @extends('layouts.app')
 @section('title','Contact Us')
 
@@ -25,28 +24,33 @@
   
       <!--== Start Contact Area Wrapper ==-->
       <section class="contact-area contact-page-area">
-        @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-    @if (session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-    @endif
         <div class="container">
           <div class="row contact-page-wrapper">
             <div class="col-lg-6">
               <div class="contact-form-wrap">
                 <div class="contact-form-title">
-                  <h5 class="sub-title">Don’t worry!</h5>
+                  <h5 class="sub-title">Don't worry!</h5>
                   <h2 class="title">If you have any query? Contact with us.</h2>
                 </div>
+                
+                <!-- Display Validation Errors -->
+                @if ($errors->any())
+                  <div class="alert alert-danger mb-4">
+                    <ul class="mb-0">
+                      @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                      @endforeach
+                    </ul>
+                  </div>
+                @endif
+                
+                <!-- Display Success Message -->
+                @if (session('success'))
+                  <div class="alert alert-success mb-4">
+                    {{ session('success') }}
+                  </div>
+                @endif
+                
                 <!--== Start Contact Form ==-->
                 <div class="contact-form">
                   <form id="contact-form" action="{{ url('contact/submit') }}" method="POST">
@@ -54,29 +58,42 @@
                     <div class="row row-gutter-20">
                       <div class="col-md-6">
                         <div class="form-group">
-                          <input class="form-control" type="text" name="name" placeholder="Name">
+                          <input class="form-control @error('name') is-invalid @enderror" type="text" name="name" placeholder="Name" value="{{ old('name') }}">
+                          @error('name')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                          @enderror
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
-                          <input class="form-control" type="email" name="email" placeholder="Email">
+                          <input class="form-control @error('email') is-invalid @enderror" type="email" name="email" placeholder="Email" value="{{ old('email') }}">
+                          @error('email')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                          @enderror
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
-                          <input class="form-control" type="tel" name="phone" placeholder="Phone">
+                          <input class="form-control @error('phone') is-invalid @enderror" type="tel" name="phone" placeholder="Phone (8-15 digits)" value="{{ old('phone') }}">
+                          @error('phone')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                          @enderror
                         </div>
                       </div>
-         
-
                       <div class="col-md-6">
                         <div class="form-group">
-                          <input class="form-control" type="text" name="subject" placeholder="Subject">
+                          <input class="form-control @error('subject') is-invalid @enderror" type="text" name="subject" placeholder="Subject" value="{{ old('subject') }}">
+                          @error('subject')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                          @enderror
                         </div>
                       </div>
                       <div class="col-12">
-                        <div class="form-group mb--0">
-                          <textarea class="form-control" name="message" placeholder="Message"></textarea>
+                        <div class="form-group">
+                          <textarea class="form-control @error('message') is-invalid @enderror" name="message" placeholder="Message">{{ old('message') }}</textarea>
+                          @error('message')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                          @enderror
                         </div>
                       </div>
                       <div class="col-12">
@@ -88,24 +105,6 @@
                   </form>
                 </div>
                 <!--== End Contact Form ==-->
-  
-                <!--== Message Notification ==-->
-                <div>
-                    @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-                @if (session('success'))
-                    <div class="alert alert-success">
-                        {{ session('success') }}
-                    </div>
-                @endif
-                </div>
               </div>
             </div>
             <div class="col-lg-6">
@@ -144,4 +143,4 @@ Dubai, UAE</p>
         </div>
       </section>
       <!--== End Contact Area Wrapper ==-->
-      @endsection
+@endsection

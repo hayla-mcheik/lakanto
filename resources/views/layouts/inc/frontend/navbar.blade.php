@@ -80,21 +80,13 @@
               </ul>
             </div>
             @endif
-         
-            <div class="theme-language">
+                     <div class="theme-currency">
               <a class="dropdown-btn" href="#" role="button">
-                <img src="{{ asset('assets/img/photos/language-01.jpg')}}" alt="Has-Image">English
-                <i class="ion-ios-arrow-down"></i> 
+          USD $
               </a>
-              <ul class="dropdown-content">
-                <li>
-                  <a href="#/"><img src="{{ asset('assets/img/photos/language-01.jpg')}}" alt="Has-Image">English</a>
-                </li>
-                <li>
-                  <a href="#/"><img src="{{ asset('assets/img/photos/language-02.jpg')}}" alt="Has-Image">Italiano</a>
-                </li>
-              </ul>
+     
             </div>
+         
           </div>
         </div>
       </div>
@@ -123,7 +115,7 @@
           </div>
           <div class="col col-md-4 col-sm-12">
             <div class="header-action-area float-end">
-              <div class="search-content-wrap">
+              {{-- <div class="search-content-wrap">
                 <button class="btn-search">
                   <span class="icon icon-search icon-magnifier"></span>
                 </button>
@@ -138,7 +130,7 @@
                     </div>
                   </form>
                 </div>
-              </div>
+              </div> --}}
               <div class="shop-button-group">
        
                     <div class="shop-button-item">
@@ -212,9 +204,11 @@
             <div class="header-item justify-content-end">
               <button class="btn-user" onclick="window.location.href='{{url('account') }}'"><i class="icon-user"></i></button>
               <button class="btn-cart" onclick="window.location.href='{{url('cart')}}'"><i class="icon-bag"></i> <span class="item-count"><livewire:frontend.cart.cart-count /></span></button>
-            </div>
+               <button class="btn-cart" onclick="window.location.href='{{url('wishlist')}}'"><i class="icon-heart"></i> <span class="item-count"><livewire:frontend.wishlist-count /></span></button>
+       
+              </div>
           </div>
-          <div class="col-12">
+          {{-- <div class="col-12">
             <div class="responsive-search-content">
               <form action="{{ url('search') }}" method="GET" role="search">
                 <div class="form-input-item">
@@ -226,10 +220,15 @@
                 </div>
               </form>
             </div>
-          </div>
+          </div> --}}
         </div>
       </div>
     </div>
     <!--== End Responsive Header ==-->
   </header>
   <!--== End Header Wrapper ==-->
+  <style>
+    .icon-user{
+      display: none;
+    }
+  </style>

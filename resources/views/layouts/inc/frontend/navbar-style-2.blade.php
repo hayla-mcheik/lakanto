@@ -77,7 +77,7 @@
               </ul>
             </div>
             @endif
-            <div class="theme-currency">
+            {{-- <div class="theme-currency">
               <a class="dropdown-btn" href="#" role="button">
           USD $
                 <i class="ion-ios-arrow-down"></i> 
@@ -90,8 +90,8 @@
                   <a href="#/">USD $</a>
                 </li>
               </ul>
-            </div>
-            <div class="theme-language">
+            </div> --}}
+            {{-- <div class="theme-language">
               <a class="dropdown-btn" href="#" role="button">
                 <img src="{{ asset('assets/img/photos/language-01.jpg')}}" alt="Has-Image">English
                 <i class="ion-ios-arrow-down"></i> 
@@ -104,7 +104,7 @@
                   <a href="#/"><img src="{{asset('assets/img/photos/language-02.jpg')}}" alt="Has-Image">Italiano</a>
                 </li>
               </ul>
-            </div>
+            </div> --}}
           </div>
         </div>
       </div>
@@ -195,6 +195,8 @@
             <div class="header-item justify-content-end">
               <button class="btn-user" onclick="window.location.href='{{ url('account') }}'"><i class="icon-user"></i></button>
               <button class="btn-cart" onclick="window.location.href='{{ url('cart') }}'"><i class="icon-bag"></i> <span class="item-count"><livewire:frontend.cart.cart-count /></span></button>
+              <button class="btn-cart" onclick="window.location.href='{{url('wishlist')}}'"><i class="icon-heart"></i> <span class="item-count"><livewire:frontend.wishlist-count /></span></button>
+       
             </div>
           </div>
           <div class="col-12">
@@ -206,3 +208,9 @@
     <!--== End Responsive Header ==-->
   </header>
   <!--== End Header Wrapper ==-->
+
+    <style>
+    .icon-user{
+      display: none;
+    }
+  </style>

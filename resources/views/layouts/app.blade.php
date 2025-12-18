@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,12 +43,193 @@
     <!--== Spacing CSS ==-->
     <link href="{{ asset('assets/css/spacing.css') }}" rel="stylesheet">
 
-    
-
     <!--== Main Style CSS ==-->
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
 
-
+    <!-- Custom CSS for Enhanced Footer Design -->
+    <style>
+        /* Enhanced Footer Styles */
+        .footer-connect-section {
+            background: black;
+            padding: 0px 0;
+            color: #fff;
+        }
+        
+        .footer-connect-section .section-title {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: #fff;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-connect-section .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 60px;
+            height: 3px;
+            background: #ec6b81;
+        }
+        
+        .social-connect-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 30px;
+            height: 100%;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        
+        .social-connect-box:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .newsletter-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 30px;
+            height: 100%;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        
+        .newsletter-box:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .social-icons-enhanced {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 25px 0;
+        }
+        
+        .social-icons-enhanced a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: #fff;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .social-icons-enhanced a:hover {
+            background: #ec6b81;
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(236, 107, 129, 0.3);
+        }
+        
+        .social-icons-enhanced .facebook:hover { background: #3b5998; }
+        .social-icons-enhanced .twitter:hover { background: #1da1f2; }
+        .social-icons-enhanced .youtube:hover { background: #ff0000; }
+        .social-icons-enhanced .instagram:hover { 
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+        }
+        
+        .newsletter-form-enhanced .form-control {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            height: 50px;
+            border-radius: 25px;
+            padding: 0 20px;
+            margin-bottom: 15px;
+        }
+        
+        .newsletter-form-enhanced .form-control:focus {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: #ec6b81;
+            box-shadow: 0 0 0 0.2rem rgba(236, 107, 129, 0.25);
+            color: #fff;
+        }
+        
+        .newsletter-form-enhanced .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .newsletter-form-enhanced .btn-submit-enhanced {
+            background: #ec6b81;
+            border: none;
+            color: white;
+            height: 50px;
+            border-radius: 25px;
+            padding: 0 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .newsletter-form-enhanced .btn-submit-enhanced:hover {
+            background: #d8556b;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(236, 107, 129, 0.3);
+        }
+        
+        .connect-description {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+        
+        .newsletter-description {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            line-height: 1.5;
+            margin-top: 15px;
+            margin-bottom: 0;
+        }
+        
+        .alert {
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .footer-connect-section {
+                padding: 0px 0;
+            }
+            
+            .social-connect-box,
+            .newsletter-box {
+                padding: 20px;
+                margin-bottom: 30px;
+            }
+            
+            .footer-connect-section .section-title {
+                font-size: 24px;
+            }
+            
+            .social-icons-enhanced {
+                gap: 10px;
+            }
+            
+            .social-icons-enhanced a {
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .social-icons-enhanced {
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+            
+            .newsletter-form-enhanced .btn-submit-enhanced {
+                padding: 0 20px;
+            }
+        }
+    </style>
 
     <!--[if lt IE 9]>
     <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -129,67 +309,55 @@
     </section>
     <!--== End Contact Info Area Wrapper ==-->
 
-    <!--== Start Divider Area Wrapper ==-->
-    <section class="divider-area">
-      <div class="container pt-90 pt-lg-70 pb-lg-60">
+    <!--== Start Footer Connect Section ==-->
+    <section class="footer-connect-section">
+      <div class="container">
         <div class="row">
-          <div class="col-12">
-            <div class="divider-style-wrap">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="divider-content text-center">
-                    <h4 class="title hidden-sm-down">Let’s Connect On Social</h4>
-                    <h4 class="title2 hidden-md-up collapsed" data-bs-toggle="collapse" data-bs-target="#dividerId-1">Let’s Connect On Social</h4>
-                    <div id="dividerId-1" class="collapse">
-                      <div class="social-icons">
-                        <a href="#/"><i class="la la-facebook"></i></a>
-                        <a href="#/"><i class="la la-twitter"></i></a>
-                        <a href="#/"><i class="la la-youtube"></i></a>
-                        <a href="#/"><i class="la la-instagram"></i></a>
-                      </div>
-                      <p class="mb-sm-25">Follow us on your favorite platforms. Check out new launch teasers, how-to videos, and share your favorite looks.</p>
-                    </div>
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <div class="social-connect-box text-center">
+              <h3 class="section-title">Let's Connect On Social</h3>
+              <div class="social-icons-enhanced">
+                <a href="#" class="facebook"><i class="la la-facebook"></i></a>
+                <a href="#" class="twitter"><i class="la la-twitter"></i></a>
+                <a href="#" class="youtube"><i class="la la-youtube"></i></a>
+                <a href="#" class="instagram"><i class="la la-instagram"></i></a>
+              </div>
+              <p class="connect-description">Follow us on your favorite platforms. Check out new launch teasers, how-to videos, and share your favorite looks.</p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="newsletter-box text-center">
+              <h3 class="section-title">Sign Up For Newsletter</h3>
+              <div class="newsletter-form-enhanced">
+                @if ($errors->any())
+                  <div class="alert alert-danger">
+                    <ul class="mb-0">
+                      @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                      @endforeach
+                    </ul>
                   </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="divider-content text-center">
-                    <h4 class="title hidden-sm-down" data-margin-bottom="32">Sign Up For Newsletter</h4>
-                    <h4 class="title2 hidden-md-up collapsed" data-bs-toggle="collapse" data-bs-target="#dividerId-2">Sign Up For Newsletter</h4>
-                    <div id="dividerId-2" class="collapse">
-                      <div class="newsletter-content-wrap">
-                        <div class="newsletter-form">
-                          @if ($errors->any())
-                          <div class="alert alert-danger">
-                              <ul>
-                                  @foreach ($errors->all() as $error)
-                                      <li>{{ $error }}</li>
-                                  @endforeach
-                              </ul>
-                          </div>
-                      @endif
-                      @if (session('success'))
-                          <div class="alert alert-success">
-                              {{ session('success') }}
-                          </div>
-                      @endif
-                          <form action="{{ url('subscribe') }}" method="POST">
-                            @csrf
-                            <input type="email" name="email" class="form-control" placeholder="Your email address">
-                            <button class="btn btn-submit" type="submit">Sign up</button>
-                          </form>
-                        </div>
-                      </div>
-                      <p>You may unsubscribe at any moment. For that purpose, please find our contact info in the legal notice.</p>
-                    </div>
+                @endif
+                @if (session('success'))
+                  <div class="alert alert-success">
+                    {{ session('success') }}
                   </div>
-                </div>
+                @endif
+                <form action="{{ url('subscribe') }}" method="POST">
+                  @csrf
+                  <div class="mb-3">
+                    <input type="email" name="email" class="form-control" placeholder="Your email address" required>
+                  </div>
+                  <button class="btn btn-submit-enhanced" type="submit">Subscribe Now</button>
+                </form>
+                <p class="newsletter-description">You may unsubscribe at any moment. For that purpose, please find our contact info in the legal notice.</p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!--== End Divider Area Wrapper ==-->
+    <!--== End Footer Connect Section ==-->
         </main>
             @include('layouts.inc.frontend.footer')
               <!--== Scroll Top Button ==-->
@@ -204,7 +372,7 @@
         <!-- Off Canvas Header -->
         <div class="off-canvas-header">
           <div class="close-action">
-            <button class="btn-menu-close">menu<i class="icon-arrow-left"></i></button>
+            <button class="btn-menu-close">menu <i class="icon-arrow-left"></i></button>
           </div>
         </div>
 
@@ -260,13 +428,10 @@
             console.log('Message event triggered');
             alertify.set('notifier','position', 'top-right');
             alertify.notify(event.detail.text , event.detail.type);
-});
+        });
+    </script>
 
-        </script>
-
-
-
-         @yield('script')
+    @yield('script')
     @livewireScripts
     @stack('scripts')
     

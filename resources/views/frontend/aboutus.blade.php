@@ -1,119 +1,512 @@
 @extends('layouts.app')
-@section('title','About Us')
+@section('title', 'About Us')
 
 @section('content')
 
-    <!--== Start Page Header Area Wrapper ==-->
-    <div class="page-header-area bg-img" data-bg-img="{{ asset('assets/img/bg-02.webp')}}">
-        <div class="container">
-          <div class="row">
+<!--== Start Page Header Area ==-->
+<div class="page-header-area bg-img" data-bg-img="{{ asset('assets/img/bg-02.webp') }}">
+    <div class="container">
+        <div class="row">
             <div class="col-12 text-center">
-              <div class="page-header-content">
-                <nav class="breadcrumb-area">
-                  <ul class="breadcrumb">
-                    <li><a href="{{ url('/') }}">Home</a></li>
-                    <li class="breadcrumb-sep"><i class="fa fa-angle-right"></i></li>
-                    <li>About us</li>
-                  </ul>
-                </nav>
-              </div>
+                <div class="page-header-content">
+                    <nav class="breadcrumb-area">
+                        <ul class="breadcrumb">
+                            <li><a href="{{ url('/') }}">Home</a></li>
+                            <li class="breadcrumb-sep"><i class="fa fa-angle-right"></i></li>
+                            <li>About Us</li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-      <!--== End Page Header Area Wrapper ==-->
- 
-      <!--== Start Title & Description Area Wrapper (New Section) ==-->
-      <div class="container pt-100 pb-100">
-        <div class="row justify-content-center">
-          <div class="col-lg-8 text-center">
-            <h2 class="h1 mb-4">Dedicated to Quality and Customer Success</h2>
-            <p class="lead">We believe in delivering exceptional value through innovative solutions and unwavering commitment to our clients. Our journey is built on trust, transparency, and a relentless pursuit of excellence in everything we do.</p>
-          </div>
+    </div>
+</div>
+<!--== End Page Header Area ==-->
+
+<!--== Start About Content Section ==-->
+<section class="about-content-section py-100">
+    <div class="container">
+        
+        <!-- Section 1: What is Monk Fruit -->
+        <div class="about-section mb-100">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title mb-4">WHAT IS MONK FRUIT?</h2>
+                    <p class="lead-text">
+                        Monk fruit is a small round fruit in the gourd family, also known as Luo Han Guo, 
+                        named after the Luo Han monks who discovered it. The monks were healers of people 
+                        and stewards of the land. We carry on that tradition today by helping people get 
+                        off sugar addictions and growing and processing monk fruit in a way that is sustainable, 
+                        including having a zero-emissions processing plant.
+                    </p>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-12 d-flex justify-content-center">
+                    <img src="{{ asset('assets/img/compressed/img-first.jpg') }}" 
+                         class="img-fluid rounded-lg shadow-sm mx-auto" 
+                         alt="Monk Fruit Overview">
+                </div>
+            </div>
         </div>
 
-                <div class="row justify-content-center">
-          <div class="col-lg-12 text-center">
-<img src="/assets/img/compressed/img-first.jpg" class="img-fluid" />
-          </div>
-        </div>
-      </div>
-      <!--== End Title & Description Area Wrapper ==-->
- 
-      <!--== Start About Area Wrapper ==-->
-      <section class="about-area about-page-area">
-        <div class="container">
-          <div class="row about-page-wrap">
-            <div class="col-md-6">
-              <div class="about-content">
-                <h3 class="title">Cartic Story, We Craft Awesome Stuff With Great Experiences.</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusm tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Duis aute irure dolor</p>
-                <a class="btn-theme" href="{{ url('contactus') }}">Contact Us</a>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="about-thumb">
-                <img src="{{ asset('assets/img/banner/banner.webp')}}" alt="Image-HasTech" class="img">
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!--== End About Area Wrapper ==-->
- 
-      <!--== Start Feature Area Wrapper ==-->
-      <div class="feature-area feature-about-area position-relative z-index-1">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6 col-lg-4">
-              <div class="feature-icon-box-style2">
-                <div class="inner-content">
-                  <div class="icon-box">
-                    <img src="assets/img/icons/f01.png" alt="Image-HasTech" class="icon-img">
-                  </div>
-                  <div class="content">
-                    <h5 class="title">Free Shipping</h5>
-                    <p>Provide free home delivery <br>for all product over $100</p>
-                  </div>
+        <!-- Section 2: The Immortals' Fruit -->
+        <div class="about-section mb-100">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title mb-4">THE IMMORTALS' FRUIT</h2>
                 </div>
-              </div>
             </div>
-            <div class="col-md-6 col-lg-4">
-              <div class="feature-icon-box-style2">
-                <div class="inner-content">
-                  <div class="icon-box">
-                    <img src="{{ asset('assets/img/icons/f02.png')}}" alt="Image-HasTech" class="icon-img">
-                  </div>
-                  <div class="content">
-                    <h5 class="title">Online Support</h5>
-                    <p>To satisfy our customer we <br>try to give support online</p>
-                  </div>
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-12 d-flex justify-content-center">
+                    <img src="{{ asset('assets/img/compressed/img-two.jpg') }}" 
+                         class="img-fluid rounded-lg shadow-sm mx-auto" 
+                         alt="The Immortals' Fruit">
                 </div>
-              </div>
             </div>
-            <div class="col-md-6 col-lg-4">
-              <div class="feature-icon-box-style2">
-                <div class="inner-content">
-                  <div class="icon-box">
-                    <img src="assets/img/icons/f03.png" alt="Image-HasTech" class="icon-img">
-                  </div>
-                  <div class="content">
-                    <h5 class="title">Secure Payment</h5>
-                    <p>We ensure our product Good <br>quality all times</p>
-                  </div>
+        </div>
+
+        <!-- Section 3: Benefits Chart -->
+        <div class="about-section mb-100">
+            <div class="row justify-content-center">
+                <div class="col-lg-12 d-flex justify-content-center">
+                    <img src="{{ asset('assets/img/compressed/chart.png') }}" 
+                         class="img-fluid rounded-lg shadow-sm mx-auto" 
+                         alt="Monk Fruit Benefits Chart">
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-        <div class="shape-group">
-          <div class="shape-img1">
-            <img src="{{ asset('assets/img/shape/01.png')}}" alt="Image">
-          </div>
-          <div class="shape-img2">
-            <img src="{{ asset('assets/img/shape/02.png')}}" alt="Image">
-          </div>
+
+        <!-- Section 4: How Monk Fruit is Grown -->
+        <div class="about-section mb-100">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title mb-4">HOW IS MONK FRUIT GROWN?</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-12 d-flex justify-content-center">
+                    <img src="{{ asset('assets/img/compressed/img-one.jpg') }}" 
+                         class="img-fluid rounded-lg shadow-sm mx-auto" 
+                         alt="Monk Fruit Farming">
+                </div>
+            </div>
         </div>
-      </div>
-      <!--== End Feature Area Wrapper ==-->
+
+        <!-- Section 5: Growing Conditions -->
+        <div class="about-section mb-100">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="about-text-box p-4">
+                        <h3 class="subtitle mb-4">
+                            MONK FRUIT GROWS IN VERY SELECT ELEVATIONS AND CONDITIONS; IT REQUIRES HIGH RAINFALL, 
+                            HIGH HUMIDITY AND A HIGH-TEMPERATURE DIFFERENCE BETWEEN DAY AND NIGHT.
+                        </h3>
+                        <p class="text-muted">
+                            We ensure the monk fruit for our products is grown on pristine farms in the remote 
+                            mountains of Guilin, China, hours away from the city pollution. The elevation of the 
+                            fields and steepness of the slopes allows for optimal growth, protection from flood 
+                            damage, and access to unpolluted water. The fields are generally a 20-45 minute hike 
+                            from the farm villages.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-text-box p-4">
+                        <p class="text-muted">
+                            Each fruit is pollinated, grown and harvested by hand, without pesticides, using the 
+                            same traditional methods they have been using for centuries. Farmers use natural pest 
+                            control, including bottle traps and netting, instead of pesticides. We support the 
+                            local economy without interference, allowing family villages to exist as they have 
+                            for centuries—some as long as 400 years.
+                        </p>
+                        <ul class="feature-list mt-4">
+                            <li><i class="fa fa-check text-danger mr-2"></i> No pesticides</li>
+                            <li><i class="fa fa-check text-danger mr-2"></i> Farming is done the same way it has been for centuries</li>
+                            <li><i class="fa fa-check text-danger mr-2"></i> Monk fruit is grown away from city pollution</li>
+                            <li><i class="fa fa-check text-danger mr-2"></i> The fruit is planted, pollinated, and picked by hand</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 6: Pesticide-Free -->
+        <div class="about-section mb-100 text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="section-title mb-4">OUR MONK FRUIT IS GROWN PESTICIDE-FREE</h2>
+                    <p class="lead-text">
+                        The farmers use natural pest control, including bottle traps which use honey and 
+                        a small amount of sanitizer to trap bugs without pesticides.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 7: Quality Standards -->
+        <div class="about-section mb-100">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="about-text-box p-4">
+                        <h3 class="subtitle mb-4">
+                            AT LAKANTO, WE ONLY WORK WITH THE BEST FARMERS THAT FOLLOW THESE HIGH STANDARDS 
+                            FOR THE BEST-TASTING, HIGHEST-QUALITY MONK FRUIT.
+                        </h3>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-text-box p-4">
+                        <p class="text-muted">
+                            To keep up with demand and ensure quality we provide greenhouse-grown seedlings 
+                            to the farmers. By giving the monk fruit a strong start, we reduce the amount of 
+                            crop loss. The nursery that grows the seedlings was started by the original botanists 
+                            we worked with from the beginning as we developed the monk fruit extract years ago.
+                        </p>
+                        <p class="text-muted mt-3">
+                            Our process is highly efficient. The average farm is only 4 acres large but will 
+                            yield around 200,000 fruits per harvest.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 8: Field Cycling -->
+        <div class="about-section mb-100">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title mb-4">FIELD CYCLING FOR OPTIMAL GROWTH</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-12 d-flex justify-content-center">
+                    <img src="{{ asset('assets/img/compressed/img-seven.jpg') }}" 
+                         class="img-fluid rounded-lg shadow-sm mb-4 mx-auto" 
+                         alt="Field Cycling">
+                </div>
+                <div class="col-lg-12 text-center">
+                    <p class="lead-text">
+                        Monk fruit is a small round fruit in the gourd family, also known as Luo Han Guo, 
+                        named after the Luo Han monks who discovered it. The monks were healers of people 
+                        and stewards of the land. We carry on that tradition today by helping people get 
+                        off sugar addictions and growing and processing monk fruit in a way that is sustainable, 
+                        including having a zero-emissions processing plant.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 9: Image with Overlay -->
+        <div class="about-section mb-100">
+            <div class="row justify-content-center">
+                <div class="col-lg-12 d-flex justify-content-center">
+                    <div class="image-overlay-container position-relative rounded-xl overflow-hidden shadow-lg w-100 max-w-1200">
+                        <img src="{{ asset('assets/img/compressed/img-six.jpg') }}" 
+                             class="w-100 h-100 object-cover mx-auto" 
+                             alt="Clean Green Monk Fruit Farm"
+                             onerror="this.onerror=null; this.src='https://placehold.co/1200x600/34D399/ffffff?text=Placeholder+Image+Unavailable';">
+                        <div class="overlay-content position-absolute d-flex align-items-center justify-content-center w-100 h-100">
+                            <div class="overlay-text bg-dark bg-opacity-75 p-4 p-md-5 rounded-lg max-w-lg mx-3">
+                                <p class="text-white text-center mb-0 fw-medium fs-5">
+                                    Some monk fruit farms may be in polluted areas, but at Lakanto, we only contract 
+                                    with farmers that follow these high standards for the highest-quality and best-tasting monk fruit.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 10: Extract Process -->
+        <div class="about-section mb-100">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0 d-flex justify-content-center">
+                    <img src="{{ asset('assets/img/compressed/img-five.jpg') }}" 
+                         class="img-fluid rounded-lg shadow-sm mx-auto" 
+                         alt="Monk Fruit Extraction">
+                </div>
+                <div class="col-lg-6">
+                    <div class="ps-lg-4">
+                        <h3 class="subtitle mb-4">HOW IS MONK FRUIT EXTRACT MADE?</h3>
+                        <p class="text-muted">
+                            We were first to use the modern mogroside extraction process which was created 
+                            by Dr. Murata. Our monk fruit extract process is held to the highest, Japanese 
+                            standards, in our zero emissions processing plant.
+                        </p>
+                        <p class="text-muted mt-3">
+                            Wanting to improve the economy in the area, Lakanto's Founder, Shota Saraya, 
+                            decided to share his research and discoveries about monk fruit openly so that 
+                            the economy of Guilin and the surrounding areas would benefit and monk fruit 
+                            could be accessed globally.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 11: Process Images -->
+        <div class="about-section mb-100">
+            <div class="row justify-content-center">
+                <div class="col-12 d-flex justify-content-center">
+                    <img src="{{ asset('assets/img/compressed/img-four.jpg') }}" 
+                         class="img-fluid rounded-lg shadow-sm d-none d-md-block mx-auto" 
+                         alt="Monk Fruit Process - Desktop">
+                    <img src="{{ asset('assets/img/compressed/img-three.jpg') }}" 
+                         class="img-fluid rounded-lg shadow-sm d-block d-md-none mx-auto" 
+                         alt="Monk Fruit Process - Mobile">
+                </div>
+            </div>
+        </div>
+
+    </div>
+           <!-- Section 7: Quality Standards -->
+        <div class="about-section mb-100">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="about-text-box p-4">
+                        <h3 class="subtitle mb-4">
+                 OUR PROCESS MAINTAINS THE FRESHNESS OF THE FRUIT AS LONG AS POSSIBLE TO GET THE BEST FLAVOR AND SWEETNESS. THERE IS NO ROASTING OR PRE-PROCESSING. THE FACTORY IS CLOSE ENOUGH TO THE FIELD TO MAINTAIN THE FRESHNESS OF THE FRUITS BEFORE THEY ARE PROCESSED.
+                        </h3>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-text-box p-4">
+                        <p class="text-muted">
+The entire fresh fruit is washed, crushed and slowly steeped in hot water. The sweet juice is ﬁltered to remove fructose, sucrose and ﬂavor-altering proteins, leaving mogroside in varying concentrations. The solution is condensed and dehydrated, leaving high purity monk fruit extract.
+
+Saraya Co. Ltd, Lakanto's parent company, takes some of the residual pulp and makes it into a natural hand scrub. The rest is composted and redistributed to local farms.
+
+We are always working to further reduce our waste.
+                        </p>
+              
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+<!--== End About Content Section ==-->
+
+<!--== Start Features Section ==-->
+<div class="feature-area feature-about-area position-relative z-index-1">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4 mb-4 mb-lg-0 d-flex justify-content-center">
+                <div class="feature-card h-100 p-4 text-center shadow-sm rounded-lg">
+                    <div class="icon-box mb-3 d-flex justify-content-center">
+                        <img src="{{ asset('assets/img/icons/f01.png') }}" 
+                             alt="Free Shipping" 
+                             class="icon-img mx-auto">
+                    </div>
+                    <h5 class="card-title mb-2">Free Shipping</h5>
+                    <p class="text-muted mb-0">
+                        Provide free home delivery<br>for all product over $100
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4 mb-lg-0 d-flex justify-content-center">
+                <div class="feature-card h-100 p-4 text-center shadow-sm rounded-lg">
+                    <div class="icon-box mb-3 d-flex justify-content-center">
+                        <img src="{{ asset('assets/img/icons/f02.png') }}" 
+                             alt="Online Support" 
+                             class="icon-img mx-auto">
+                    </div>
+                    <h5 class="card-title mb-2">Online Support</h5>
+                    <p class="text-muted mb-0">
+                        To satisfy our customer we<br>try to give support online
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 d-flex justify-content-center">
+                <div class="feature-card h-100 p-4 text-center shadow-sm rounded-lg">
+                    <div class="icon-box mb-3 d-flex justify-content-center">
+                        <img src="{{ asset('assets/img/icons/f03.png') }}" 
+                             alt="Secure Payment" 
+                             class="icon-img mx-auto">
+                    </div>
+                    <h5 class="card-title mb-2">Secure Payment</h5>
+                    <p class="text-muted mb-0">
+                        We ensure our product Good<br>quality all times
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="shape-group">
+        <div class="shape-img1">
+            <img src="{{ asset('assets/img/shape/01.png') }}" 
+                 alt="Decoration Shape" 
+                 class="mx-auto">
+        </div>
+        <div class="shape-img2">
+            <img src="{{ asset('assets/img/shape/02.png') }}" 
+                 alt="Decoration Shape" 
+                 class="mx-auto">
+        </div>
+    </div>
+</div>
+<!--== End Features Section ==-->
+
 @endsection
+
+@push('styles')
+<style>
+    .about-content-section {
+        background-color: #fff;
+    }
+    
+    .about-section {
+        scroll-margin-top: 80px;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #2c3e50;
+        position: relative;
+        padding-bottom: 1rem;
+    }
+    
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: linear-gradient(90deg, #34D399, #10B981);
+    }
+    
+    .subtitle {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #2c3e50;
+        line-height: 1.4;
+    }
+    
+    .lead-text {
+        font-size: 1.125rem;
+        line-height: 1.7;
+        color: #4a5568;
+    }
+    
+    .about-text-box {
+        background-color: #f8fafc;
+        border-radius: 0.5rem;
+        height: 100%;
+    }
+    
+    .feature-list {
+        list-style: none;
+        padding-left: 0;
+    }
+    
+    .feature-list li {
+        padding: 0.5rem 0;
+        font-size: 1rem;
+        color: #4a5568;
+    }
+    
+    .image-overlay-container {
+        min-height: 400px;
+    }
+    
+    .max-w-1200 {
+        max-width: 1200px;
+    }
+    
+    .overlay-content {
+        top: 0;
+        left: 0;
+    }
+    
+    .overlay-text {
+        backdrop-filter: blur(5px);
+    }
+    
+    .feature-card {
+        background: white;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid #e2e8f0;
+        max-width: 100%;
+    }
+    
+    .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
+    }
+    
+    .icon-img {
+        height: 60px;
+        width: auto;
+        margin: 0 auto;
+        display: block;
+    }
+    
+    .card-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #2c3e50;
+    }
+    
+    /* Ensure all images are centered */
+    .img-fluid {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Center the shape images */
+    .shape-img1 img,
+    .shape-img2 img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    @media (max-width: 768px) {
+        .section-title {
+            font-size: 2rem;
+        }
+        
+        .lead-text {
+            font-size: 1rem;
+        }
+        
+        .py-100 {
+            padding-top: 60px !important;
+            padding-bottom: 60px !important;
+        }
+        
+        .mb-100 {
+            margin-bottom: 60px !important;
+        }
+        
+        .image-overlay-container {
+            min-height: 300px;
+        }
+        
+        .overlay-text {
+            padding: 1rem !important;
+        }
+        
+        .overlay-text p {
+            font-size: 1rem !important;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .image-overlay-container {
+            min-height: 250px;
+        }
+        
+        .overlay-text p {
+            font-size: 0.9rem !important;
+        }
+    }
+</style>
+@endpush

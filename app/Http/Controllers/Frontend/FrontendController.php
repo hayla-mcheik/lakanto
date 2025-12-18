@@ -122,22 +122,37 @@ public function thankyou()
 
 public function contactsubmit(Request $request)
 {
-$request->validate([
-'name' => 'required|string|max:255',
-'email' => 'nullable|email',
-'phone' => 'required|string|digits_between:8,15',
-'subject' => 'required|string|max:255',
-'message' => 'required|string|max:1000'
-]);
-$emailData = [
-    'name' => $request->name,
-    'email' => $request->email ?? $request->email,
-    'phone' => $request->phone ,
-    'subject' => $request->subject,
-    'message' => $request->message,
-];
-Mail::to('mcheikhayla26@gmail.com')->send(new ContactFormMail($emailData));
-return back()->with('success','Your message has been submitted successfully.');
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'nullable|email|max:255',
+        'phone' => [
+            'required',
+            'string',
+            function ($attribute, $value, $fail) {
+                // Remove all non-digit characters to check actual digit count
+                $digitsOnly = preg_replace('/\D/', '', $value);
+                if (strlen($digitsOnly) < 8 || strlen($digitsOnly) > 15) {
+                    $fail('The phone number must be between 8 and 15 digits.');
+                }
+            },
+        ],
+        'subject' => 'required|string|max:255',
+        'message' => 'required|string|max:1000'
+    ]);
+
+    // Clean phone number - keep only digits
+    $cleanPhone = preg_replace('/\D/', '', $request->phone);
+    
+    $emailData = [
+        'name' => $request->name,
+        'email' => $request->email ?? 'No email provided',
+        'phone' => $cleanPhone,
+        'subject' => $request->subject,
+        'message' => $request->message,
+    ];
+
+    Mail::to('mcheikhayla26@gmail.com')->send(new ContactFormMail($emailData));
+    return back()->with('success', 'Your message has been submitted successfully.');
 }
 
 

@@ -11,7 +11,7 @@
                   <ul class="breadcrumb">
                     <li><a href="{{ url('/') }}">Home</a></li>
                     <li class="breadcrumb-sep"><i class="fa fa-angle-right"></i></li>
-                    <li>Blog</li>
+                    <li>News</li>
                   </ul>
                 </nav>
               </div>
@@ -34,7 +34,7 @@
                     <a href="{{ url('blog/details/'. $blog->id) }}"><img src="{{ asset($blog->image)}}" class="img" alt="Image-HasTech"></a>
                   </div>
                   <div class="content">
-                    <h4 class="title"><a href="single-blog.html">{{ $blog->title }}</a></h4>
+                    <h4 class="title"><a href="{{ url('blog/details/'. $blog->id) }}">{{ $blog->title }}</a></h4>
                     <div class="meta">
                       <span>Posted by</span>
                       <a class="author">{{ $blog->by }}</a>

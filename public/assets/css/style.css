@@ -44,7 +44,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 a {
-  color: #ec6b81;
+  color: #981e32;
   text-decoration: none;
   transition: 0.3s;
   -webkit-transition: 0.3s;
@@ -55,7 +55,7 @@ a {
 a:hover, a:active, a:focus {
   -webkit-box-shadow: none;
           box-shadow: none;
-  color: #e32747;
+  color: #981e32;
   outline: none;
   text-decoration: none;
 }
@@ -83,25 +83,25 @@ p:last-child {
 }
 
 ::-moz-selection {
-  background: #ec6b81;
+  background: #981e32;
   color: #fff;
   text-shadow: none;
 }
 
 ::selection {
-  background: #ec6b81;
+  background: #981e32;
   color: #fff;
   text-shadow: none;
 }
 
 ::-moz-selection {
-  background: #ec6b81; /* Firefox */
+  background: #981e32; /* Firefox */
   color: #fff;
   text-shadow: none;
 }
 
 ::-webkit-selection {
-  background: #ec6b81; /* Safari */
+  background: #981e32; /* Safari */
   color: #fff;
   text-shadow: none;
 }
@@ -4543,8 +4543,8 @@ section .container-fluid {
   }
 }
 .product-tabs-content-wrap .product-tab-nav li a.active {
-  border-bottom-color: #ec6b81;
-  color: #ec6b81;
+  border-bottom-color: #981e32;
+  color: #981e32;
 }
 .product-tabs-content-wrap .product-tab-nav li:last-child a {
   margin-right: 0;
@@ -4571,7 +4571,7 @@ section .container-fluid {
   margin-right: 15px;
 }
 .product-inner-wrapper .product-header-wrap .product-tab-nav li a.active {
-  color: #ec6b81;
+  color: #981e32;
 }
 .product-inner-wrapper .product-header-wrap .total-products {
   font-size: 14px;

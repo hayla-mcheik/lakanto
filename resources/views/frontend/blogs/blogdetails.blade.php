@@ -11,7 +11,7 @@
                   <ul class="breadcrumb">
                     <li><a href="{{ url('/') }}">Home</a></li>
                     <li class="breadcrumb-sep"><i class="fa fa-angle-right"></i></li>
-                    <li>Blog Details</li>
+                    <li>News Details</li>
                   </ul>
                 </nav>
               </div>

@@ -86,9 +86,7 @@
                       <li role="presentation">
                         <a class="active" id="grid-tab" data-bs-toggle="pill" href="#grid" role="tab" aria-controls="grid" aria-selected="true"><i class="fa fa-th"></i></a>
                       </li>
-                      <li role="presentation">
-                        <a id="list-care-tab" data-bs-toggle="pill" href="#list-care" role="tab" aria-controls="list-care" aria-selected="false"><i class="fa fa-list"></i></a>
-                      </li>
+            
                     </ul>
                     <div class="total-products">
 
@@ -158,7 +156,7 @@
                                 <div class="product-info">
                                   <h4 class="title"><a href="{{ url('/collections/'.$productItem->category->slug.'/'.$productItem->slug) }}">{{ $productItem->small_description }}</a></h4>
                        
-                                <div class="prices">
+                                <div class="prices mb-2">
                                     @if($productItem->original_price)
                                         <span class="price-old">${{ $productItem->original_price }}</span>
                                     @endif
