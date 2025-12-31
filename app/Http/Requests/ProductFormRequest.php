@@ -21,6 +21,22 @@ class ProductFormRequest extends FormRequest
      */
     public function rules()
     {
+        // Check if this is a store (create) or update request
+        if ($this->isMethod('post')) {
+            // For creating a new product - require at least 2 images
+            $imageRules = [
+                'required',
+                'array',
+                'min:2'
+            ];
+        } else {
+            // For updating a product - images are optional
+            $imageRules = [
+                'nullable',
+                'array'
+            ];
+        }
+
         return [
             'category_id' => [
                 'required',
@@ -37,18 +53,16 @@ class ProductFormRequest extends FormRequest
             'small_description' => [
                 'required',
                 'string',
-         
             ],           
-             'description' => [
+            'description' => [
                 'required',
                 'string',
-           
             ],
             'original_price' => [
                 'nullable',
                 'integer',  
             ],  
-             'selling_price' => [
+            'selling_price' => [
                 'required',
                 'integer',  
             ],
@@ -59,15 +73,15 @@ class ProductFormRequest extends FormRequest
             'trending' => [
                 'nullable', 
             ], 
-             'status' => [
+            'status' => [
                 'nullable', 
             ],  
-             'meta_title' => [
+            'meta_title' => [
                 'required',
                 'string',
                 'max:255'  
             ],  
-             'meta_keyword' => [
+            'meta_keyword' => [
                 'nullable',
                 'string',
             ],
@@ -75,12 +89,28 @@ class ProductFormRequest extends FormRequest
                 'nullable',
                 'string',
             ],
-            'image' => [
-                'nullable',
-
+            'image' => $imageRules,
+            'image.*' => [
+                'image',
+                'mimes:jpeg,png,jpg,gif,webp',
+                'max:2048'
             ]
+        ];
+    }
 
-
+    /**
+     * Get custom messages for validator errors.
+     *
+     * @return array<string, string>
+     */
+    public function messages()
+    {
+        return [
+            'image.required' => 'Please upload at least 2 images (front and back views are required)',
+            'image.min' => 'Please upload at least 2 images (front and back views are required)',
+            'image.*.image' => 'Each file must be a valid image',
+            'image.*.mimes' => 'Images must be in jpeg, png, jpg, gif, or webp format',
+            'image.*.max' => 'Each image must not exceed 2MB',
         ];
     }
 }

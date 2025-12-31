@@ -71,7 +71,7 @@
             bottom: -10px;
             width: 60px;
             height: 3px;
-            background: #ec6b81;
+            background: #d40707;
         }
         
         .social-connect-box {
@@ -122,7 +122,7 @@
         }
         
         .social-icons-enhanced a:hover {
-            background: #ec6b81;
+            background: #d40707;
             transform: scale(1.1);
             box-shadow: 0 5px 15px rgba(236, 107, 129, 0.3);
         }
@@ -146,7 +146,7 @@
         
         .newsletter-form-enhanced .form-control:focus {
             background: rgba(255, 255, 255, 0.15);
-            border-color: #ec6b81;
+            border-color: #d40707;
             box-shadow: 0 0 0 0.2rem rgba(236, 107, 129, 0.25);
             color: #fff;
         }
@@ -156,7 +156,7 @@
         }
         
         .newsletter-form-enhanced .btn-submit-enhanced {
-            background: #ec6b81;
+            background: #d40707;
             border: none;
             color: white;
             height: 50px;
@@ -168,7 +168,7 @@
         }
         
         .newsletter-form-enhanced .btn-submit-enhanced:hover {
-            background: #d8556b;
+            background: #d40707;
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(236, 107, 129, 0.3);
         }
@@ -277,30 +277,23 @@
           <div class="col-12">
             <div class="contact-info contact-info-static">
               <div class="row">
-                <div class="col-border col-12 col-md-4 col-sm-6 border-0">
+                <div class="col-border col-12 col-md-6 col-sm-6 border-0">
                   <div class="info-item">
                     <div class="icon-box">
                       <i class="icon las la-phone-volume"></i>
                     </div>
-                    <p>(800) 513-7936 M-F 9AM-6PM</p>
+                    <p>00961 3 979504</p>
                   </div>
                 </div>
-                <div class="col-border col-12 col-md-4 col-sm-6 mt-xs-35">
+                <div class="col-border col-12 col-md-6 col-sm-6 mt-xs-35">
                   <div class="info-item">
                     <div class="icon-box">
                       <i class="icon las la-envelope"></i>
                     </div>
-                    <p>info@lakanto.me</p>
+                    <p>admin@nutrihublb.com</p>
                   </div>
                 </div>
-                <div class="col-border col-12 col-md-4 col-sm-12 mt-sm-35">
-                  <div class="info-item">
-                    <div class="icon-box">
-                      <i class="icon lab la-facebook-messenger"></i>
-                    </div>
-                    <p> Live M-F 9am-6pm</p>
-                  </div>
-                </div>
+        
               </div>
             </div>
           </div>
@@ -346,7 +339,7 @@
                 <form action="{{ url('subscribe') }}" method="POST">
                   @csrf
                   <div class="mb-3">
-                    <input type="email" name="email" class="form-control" placeholder="Your email address" required>
+                    <input type="email" name="email" class="form-control" placeholder="Your email address" requi#d40707>
                   </div>
                   <button class="btn btn-submit-enhanced" type="submit">Subscribe Now</button>
                 </form>
@@ -425,7 +418,7 @@
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
     <script>
         window.addEventListener('message', event => {
-            console.log('Message event triggered');
+            console.log('Message event trigge#d40707');
             alertify.set('notifier','position', 'top-right');
             alertify.notify(event.detail.text , event.detail.type);
         });

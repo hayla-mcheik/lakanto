@@ -6,11 +6,11 @@
         <div class="row">
           <div class="col-lg-4 hidden-md-down">
             <div class="contact-email">
-              <span>Email us: <a href="mailto:info@lakanto.me">info@lakanto.me</a></span>
+              <span>Email us: <a href="mailto:admin@nutrihublb.com">admin@nutrihublb.com</a></span>
             </div>
           </div>
           <div class="col-md-6 col-lg-4 text-md-start text-lg-center text-center">
-            <p>Additional 20% Off Sale Items</p>
+
           </div>
           <div class="col-md-6 col-lg-4 text-md-end text-center mt-sm-15">
             @guest
@@ -100,8 +100,8 @@
           <div class="col col-md-4 col-sm-12">
             <div class="contact-link">
               <div class="contact-info">
-                <span class="phone">Call Us: <a href="tel:(800) 513-7936">(800) 513-7936</a></span>
-                <div class="time-contact">5 Days a week from 4:00 am to 10:00 pm</div>
+                <span class="phone">Call Us: <a href="tel:00961 3 979504">00961 3 979504</a></span>
+                <div class="time-contact">6 Days a week from 9:00 am to 10:00 pm</div>
               </div>
             </div>
           </div>

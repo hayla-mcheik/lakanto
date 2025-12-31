@@ -64,7 +64,7 @@
                    name="name" 
                    placeholder="Name" 
                    value="{{ old('name') }}"
-                   required>
+                   requi#d40707>
             @error('name')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
@@ -89,7 +89,7 @@
                    name="phone" 
                    placeholder="Phone (8-15 digits)" 
                    value="{{ old('phone') }}"
-                   required>
+                   requi#d40707>
             @error('phone')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
@@ -102,7 +102,7 @@
                    name="subject" 
                    placeholder="Subject" 
                    value="{{ old('subject') }}"
-                   required>
+                   requi#d40707>
             @error('subject')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
@@ -113,7 +113,7 @@
             <textarea class="form-control @error('message') is-invalid @enderror" 
                       name="message" 
                       placeholder="Message"
-                      required>{{ old('message') }}</textarea>
+                      requi#d40707>{{ old('message') }}</textarea>
             @error('message')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
@@ -137,7 +137,7 @@
                     <div class="info">
                       <h5 class="title">Phone:</h5>
                       <p>
-                        <a href="tel:(800) 513-7936">(800) 513-7936</a>
+                        <a href="tel:00961 3 979504">00961 3 979504</a>
                       </p>
                     </div>
                   </div>
@@ -145,18 +145,16 @@
                     <div class="info">
                       <h5 class="title">Email:</h5>
                       <p>
-                        <a href="mailto:info@lakanto.me">info@lakanto.me</a>
+                        <a href="mailto:admin@nutrihublb.com">admin@nutrihublb.com</a>
                       </p>
                     </div>
                   </div>
                   <div class="info-item">
                     <div class="info">
                       <h5 class="title">Address:</h5>
-                      <p>Saraya Middle East Trading
-DMCC Business Center -
-Unit No. 46 - Gold Tower,
-Lake Level - Jumeirah Towers -
-Dubai, UAE</p>
+                      <p>PH trading SARL
+Mansourieh Maten, main street
+</p>
                     </div>
                   </div>
                 </div>

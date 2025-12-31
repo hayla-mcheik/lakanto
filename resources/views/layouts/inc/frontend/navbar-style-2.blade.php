@@ -7,7 +7,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-6 text-md-start text-center">
-            <p>Additional 20% Off Sale Items</p>
+
           </div>
           <div class="col-md-6 text-md-end text-center mt-sm-15">
             @guest
@@ -138,7 +138,7 @@
                 <div class="contact-link float-start">
                   <div class="phone">
                     <span>Call us:</span>
-                    <a href="tel:(800) 513-7936">(800) 513-7936</a>
+                    <a href="tel:00961 3 979504">00961 3 979504</a>
                   </div>
                 </div>
                 <div class="header-action-area float-start">

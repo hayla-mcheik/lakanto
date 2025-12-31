@@ -243,7 +243,7 @@
 
 
  <!--== Start Testimonial Area Wrapper ==-->
- <section class="testimonial-area">
+ {{-- <section class="testimonial-area">
     <div class="container pt-110 pt-lg-70">
       <div class="row">
         <div class="col-sm-8 m-auto">
@@ -293,7 +293,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> --}}
   <!--== End Testimonial Area Wrapper ==-->
 
 

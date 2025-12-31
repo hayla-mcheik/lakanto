@@ -29,62 +29,69 @@ class ProductController extends Controller
         return view('admin.products.create',compact('categories','colors'));
     }
 
-    public function store(ProductFormRequest $request)
-    {
-        $validatedData = $request->validated();
-        $category = Category::findOrFail( $validatedData['category_id']);
-
-      $product =  $category->products()->create([
-            'category_id' => $validatedData['category_id'],
-            'name' => $validatedData['name'],
-            'slug' => Str::slug($validatedData['slug']),
-            'small_description' => $validatedData['small_description'],
-            'description' => $validatedData['description'],
-            'original_price' => $validatedData['original_price'],
-            'selling_price' => $validatedData['selling_price'],
-            'quantity' => $validatedData['quantity'],
-            'trending' => $request->trending == true ? '1':'0',
-            'featured' => $request->featured == true ? '1':'0',
-            'status' => $request->status == true ? '1':'0',
-            'meta_title' => $validatedData['meta_title'],
-            'meta_keyword' => $validatedData['meta_keyword'],
-            'meta_description' => $validatedData['meta_description'],
-        ]);
-
-        if($request->hasFile('image')){
-            $uploadPath = 'uploads/products/';
-
-            $i=1;
-            foreach($request->file('image') as $imageFile){
-                $extention = $imageFile->getClientOriginalExtension();
-                $filename = time().$i++.'.'.$extention;
-                $imageFile->move($uploadPath,$filename);
-                $finalImagePathName = $uploadPath.$filename;
-
-                $product->productImages()->create([
-                    'product_id' => $product->id,
-                    'image' => $finalImagePathName,
-                ]);
-            }
-        }
-if($request->colors){
-    foreach($request->colors as $key => $color){
-        $product->productColors()->create([
-        'product_id' => $product->id,
-    'color_id' => $color,
-    'quantity' => $request->colorquantity[$key] ?? 0
-        ]);
+public function store(ProductFormRequest $request)
+{
+    $validatedData = $request->validated();
+    
+    // Additional check for images (redundant but safe)
+    if (!$request->hasFile('image') || count($request->file('image')) < 2) {
+        return redirect()->back()
+            ->withErrors(['image' => 'Please upload at least 2 images (front and back)'])
+            ->withInput();
     }
-}
+    
+    $category = Category::findOrFail($validatedData['category_id']);
 
-
-        return redirect('/admin/products')->with([
-            'message' => 'Product Added Successfully',
-            'product' => $product,
+    $product = $category->products()->create([
+        'category_id' => $validatedData['category_id'],
+        'name' => $validatedData['name'],
+        'slug' => Str::slug($validatedData['slug']),
+        'small_description' => $validatedData['small_description'],
+        'description' => $validatedData['description'],
+        'original_price' => $validatedData['original_price'],
+        'selling_price' => $validatedData['selling_price'],
+        'quantity' => $validatedData['quantity'],
+        'trending' => $request->trending == true ? '1':'0',
+        'featured' => $request->featured == true ? '1':'0',
+        'status' => $request->status == true ? '1':'0',
+        'meta_title' => $validatedData['meta_title'],
+        'meta_keyword' => $validatedData['meta_keyword'],
+        'meta_description' => $validatedData['meta_description'],
     ]);
 
+    // Process images
+    if($request->hasFile('image')){
+        $uploadPath = 'uploads/products/';
+
+        $i=1;
+        foreach($request->file('image') as $imageFile){
+            $extention = $imageFile->getClientOriginalExtension();
+            $filename = time().$i++.'.'.$extention;
+            $imageFile->move($uploadPath,$filename);
+            $finalImagePathName = $uploadPath.$filename;
+
+            $product->productImages()->create([
+                'product_id' => $product->id,
+                'image' => $finalImagePathName,
+            ]);
+        }
     }
 
+    if($request->colors){
+        foreach($request->colors as $key => $color){
+            $product->productColors()->create([
+                'product_id' => $product->id,
+                'color_id' => $color,
+                'quantity' => $request->colorquantity[$key] ?? 0
+            ]);
+        }
+    }
+
+    return redirect('/admin/products')->with([
+        'message' => 'Product Added Successfully',
+        'product' => $product,
+    ]);
+}
 public function edit(int $product_id)
 {
     $categories=Category::all();
