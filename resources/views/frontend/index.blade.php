@@ -140,7 +140,7 @@
       <!--== End Product Area Wrapper ==-->
 
   <!--== End Popup Product  ==-->
-      <section class="divider-area divider-product-discount-area bg-img" data-bg-img="{{ asset('assets/img/banner/banner.webp')}}" style="background-image: url(&quot;assets/img/photos/bg-01.jpg&quot;);">
+      <section class="divider-area divider-product-discount-area bg-img mb-20" data-bg-img="{{ asset('assets/img/banner/banner.webp')}}" style="background-image: url(&quot;assets/img/photos/bg-01.jpg&quot;);">
         <div class="container">
           <div class="row">
             <div class="col-12">
@@ -159,7 +159,7 @@
 
 
 <!--== Start Product Area Wrapper ==-->
-<section class="product-area">
+{{-- <section class="product-area">
     <div class="container pt-95 pt-lg-70">
         <div class="row">
             <div class="col-sm-8 m-auto">
@@ -236,7 +236,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 <!--== End Product Area Wrapper ==-->
 
 
@@ -298,7 +298,7 @@
 
 
     <!--== Start Blog Area Wrapper ==-->
-    <section class="blog-area">
+    {{-- <section class="blog-area">
         <div class="container pt-95 pb-100 pt-lg-70 pb-lg-65">
           <div class="row">
             <div class="col-sm-8 m-auto">
@@ -338,7 +338,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> --}}
       <!--== End Blog Area Wrapper ==-->
 
 

@@ -306,7 +306,7 @@
     <section class="footer-connect-section">
       <div class="container">
         <div class="row">
-          <div class="col-lg-6 mb-4 mb-lg-0">
+          <div class="col-lg-12 mb-4 mb-lg-0">
             <div class="social-connect-box text-center">
               <h3 class="section-title">Let's Connect On Social</h3>
               <div class="social-icons-enhanced">
@@ -318,7 +318,7 @@
               <p class="connect-description">Follow us on your favorite platforms. Check out new launch teasers, how-to videos, and share your favorite looks.</p>
             </div>
           </div>
-          <div class="col-lg-6">
+          {{-- <div class="col-lg-6">
             <div class="newsletter-box text-center">
               <h3 class="section-title">Sign Up For Newsletter</h3>
               <div class="newsletter-form-enhanced">
@@ -346,7 +346,7 @@
                 <p class="newsletter-description">You may unsubscribe at any moment. For that purpose, please find our contact info in the legal notice.</p>
               </div>
             </div>
-          </div>
+          </div> --}}
         </div>
       </div>
     </section>
