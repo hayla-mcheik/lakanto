@@ -4299,7 +4299,6 @@ height: 30vh;
 }
 .product-item .inner-content .product-thumb {
   position: relative;
-  overflow: hidden;
   
 }
 .product-item .inner-content .product-thumb img {
@@ -4330,7 +4329,6 @@ height: 30vh;
 .product-thumb {
     width: 100%;
     aspect-ratio: 1 / 1; 
-    overflow: hidden;
     position: relative;
 }
 

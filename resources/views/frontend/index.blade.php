@@ -212,7 +212,7 @@
                                         </div>
                                         <div class="product-desc">
                                             <div class="product-info">
-                                                <h4 class="title"><a href="single-product.html">{{ $productItem->small_description }}</a></h4>
+                                                <h4 class="title"><a href="{{ url('/collections/'.$productItem->category->slug.'/'.$productItem->slug) }}">{{ $productItem->small_description }}</a></h4>
                                                 <div class="prices">
                                                     @if($productItem->original_price)
                                                         <span class="price-old">${{ $productItem->original_price }}</span>
@@ -319,14 +319,14 @@
                   <div class="post-item">
                     <div class="inner-content">
                       <div class="thumb">
-                        <a href="blog.html"><img src="{{ asset($blog->image) }}" class="img" alt="Image-HasTech"></a>
+                                          <a href="{{ url('blog/details/'. $blog->id) }}"><img src="{{ asset($blog->image)}}" class="img" alt="Image-HasTech"></a>
                       </div>
                       <div class="content">
-                        <h4 class="title"><a href="single-blog.html">{{ words_limit($blog->description, 10) }}</a></h4>
+                        <h4 class="title"><a href="{{ url('blog/details/'. $blog->id) }}">{{ words_limit($blog->description, 10) }}</a></h4>
                         <div class="meta">
                           <span>Posted by</span>
-                          <a class="author" href="blog.html">{{ $blog->by }}</a>
-                          <a class="date" href="blog.html">{{ $blog->date }}</a>
+                          <a class="author">{{ $blog->by }}</a>
+                      <a class="date" >{{$blog->date}}</a>
                         </div>
                       </div>
                     </div>

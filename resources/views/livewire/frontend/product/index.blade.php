@@ -9,7 +9,7 @@
               <div class="shop-sidebar-wrapper">
                 <!--== Start Sidebar Item ==-->
                 <div class="sidebar-item">
-                  <h4 class="sidebar-title"><a href="shop-left-sidebar.html">All Categories</a></h4>
+                  <h4 class="sidebar-title"><a href="{{ url('/collections/') }}">All Categories</a></h4>
                   <div class="sidebar-body">
                     <div class="category-sub-menu">
                       <ul>
