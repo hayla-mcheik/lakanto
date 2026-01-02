@@ -6,15 +6,19 @@
               <div class="row">
                 <div class="col-12 text-center">
                   <div class="page-header-content">
-                    <nav class="breadcrumb-area">
-                      <ul class="breadcrumb">
-                        <li><a href="{{url('/')}}">Home</a></li>
-                        <li class="breadcrumb-sep"><i class="fa fa-angle-right"></i></li>
-                        <li><a href="#" id="shop-link">Products</a></li>
-                        <li class="breadcrumb-sep"><i class="fa fa-angle-right"></i></li>
-                        <li>Product Single</li>
-                      </ul>
-                    </nav>
+     <nav class="breadcrumb-area">
+                            <ul class="breadcrumb">
+                                <li><a href="{{url('/')}}">Home</a></li>
+                                <li class="breadcrumb-sep"><i class="fa fa-angle-right"></i></li>
+                                <li><a href="{{ url('/collections') }}">Products</a></li>
+                                @if(isset($product->category))
+                                <li class="breadcrumb-sep"><i class="fa fa-angle-right"></i></li>
+                                <li><a href="{{ url('/collections/'.$product->category->slug) }}">{{ $product->category->name }}</a></li>
+                                @endif
+                                <li class="breadcrumb-sep"><i class="fa fa-angle-right"></i></li>
+                                <li>{{ $product->name }}</li>
+                            </ul>
+                        </nav>
                   </div>
                 </div>
               </div>
